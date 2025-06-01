@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>សំណួរស្នេហា</title>
+  <style>
+    body {
+      font-family: 'Khmer OS Battambang', sans-serif;
+      background: linear-gradient(to bottom right, #ff99cc, #ffccff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #800080;
+      font-size: 2rem;
+      text-shadow: 1px 1px #fff;
+    }
+
+    .btn-group {
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #fff;
+      border: 2px solid #800080;
+      color: #800080;
+      padding: 10px 25px;
+      font-size: 1.2rem;
+      margin: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #800080;
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    #result {
+      margin-top: 30px;
+      font-size: 1.4rem;
+      color: #660066;
+      display: none;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    #reset {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>ស្រឡាញ់ខ្ញុំអត់? 💜</h1>
+  <div class="btn-group">
+    <button onclick="showResult(true)">Yes</button>
+    <button onclick="showResult(false)">No</button>
+  </div>
+
+  <div id="result"></div>
+  <button id="reset" onclick="reset()">សាកល្បងម្ដងទៀត</button>
+
+  <script>
+    function showResult(answer) {
+      const result = document.getElementById('result');
+      const resetBtn = document.getElementById('reset');
+
+      if (answer) {
+        result.innerText = "អរគុណ! ខ្ញុំក៏ស្រឡាញ់អ្នកដែរ 💖";
+      } else {
+        result.innerText = "អូនអត់ស្រឡាញ់បងទេ...😢 បងនៅស្រលាញ់អូនដដែល";
+      }
+
+      result.style.display = 'block';
+      resetBtn.style.display = 'inline-block';
+    }
+
+    function reset() {
+      document.getElementById('result').style.display = 'none';
+      document.getElementById('reset').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
